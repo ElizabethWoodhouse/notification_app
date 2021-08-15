@@ -6,13 +6,12 @@ const { User } = require('../db/index');
 //gets user information
 router.get('/:username', async (req, res, next) => {
 	try {
-		const user = await User.findAll({
+		const user = await User.findOne({
 			where: {
 				userName: req.params.username,
 			},
 			attributes: ['id', 'userName'],
 		});
-		console.log(user, 'user');
 		res.status(200).send(user);
 	} catch (err) {
 		next(err);
