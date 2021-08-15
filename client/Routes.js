@@ -6,9 +6,12 @@ import { connect } from 'react-redux';
 function Routes(props) {
 	const { isLoggedIn } = props;
 	return (
+		//all urls redirect user to the sign in page if not logged in or homepage if logged in
+		//If I had more pages, I would use 'exact path' for the pages
+		//and re-direct any non specified routes back to the homepage
 		<Switch>
-			{!isLoggedIn && <Route exact path='/' component={SignIn} />}
-			{isLoggedIn && <Route exact path='/' component={Homepage} />}
+			{!isLoggedIn && <Route exact path='*' component={SignIn} />}
+			{isLoggedIn && <Route exact path='*' component={Homepage} />}
 		</Switch>
 	);
 }
