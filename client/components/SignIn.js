@@ -1,5 +1,5 @@
 //simulates a "sign-in" page. User enters username to get personalized page.
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../store/subReducers/user';
 
