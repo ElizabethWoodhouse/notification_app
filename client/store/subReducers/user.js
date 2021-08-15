@@ -17,7 +17,7 @@ export const fetchUser = (username) => async (dispatch) => {
 	}
 };
 
-export default function category(state = {}, { type, user }) {
+export default function userReducer(state = {}, { type, user }) {
 	switch (type) {
 		case GET_USER:
 			return user;
