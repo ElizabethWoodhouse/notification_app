@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchActiveCourses } from '../store/subReducers/course';
 import { removeUser } from '../store/subReducers/user';
+import CourseInfoTile from './courseInfoTile';
 
 function HomePage(props) {
 	const [name, setname] = useState([]);
@@ -18,11 +19,6 @@ function HomePage(props) {
 			console.log('Error in Homepage with fetching course info:', error);
 		}
 	});
-	const percentage = (progress, total) => {
-		progress = Number(progress);
-		total = Number(total);
-		return Math.round((100 * progress) / total);
-	};
 	const signOut = () => {
 		props.logOut();
 	};
@@ -33,16 +29,7 @@ function HomePage(props) {
 			<div>
 				{activeCourses.length > 0 ? (
 					activeCourses.map((course) => (
-						<div key={course.id}>
-							<h4>{course.name}</h4>
-							<p>
-								{percentage(course.status.currentPage, course.pages)}% complete
-							</p>
-							<p>
-								{course.status.currentPage} pages out of {course.pages} pages
-								completed
-							</p>
-						</div>
+						<CourseInfoTile key={course.id} course={course} />
 					))
 				) : (
 					<p>You are not enrolled in any courses</p>

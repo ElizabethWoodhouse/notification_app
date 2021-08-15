@@ -1,3 +1,4 @@
+//updates the course state
 import axios from 'axios';
 
 const GET_ACTIVE_COURSES = 'GET_ACTIVE_COURSES';
