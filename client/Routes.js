@@ -1,15 +1,15 @@
+//
 import React from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import { Homepage, SignIn } from './components/index';
 import { connect } from 'react-redux';
 
-function Routes(prop) {
-	// const { isLoggedIn } = this.props;
+function Routes(props) {
+	const { isLoggedIn } = props;
 	return (
 		<Switch>
-			<Route exact path='/' component={SignIn} />
-			{/* {!isLoggedIn && <Route exact path='/' component={SignIn} />}
-				{isLoggedIn && <Route exact path='/' component={Homepage} />} */}
+			{!isLoggedIn && <Route exact path='/' component={SignIn} />}
+			{isLoggedIn && <Route exact path='/' component={Homepage} />}
 		</Switch>
 	);
 }
@@ -20,8 +20,4 @@ const mapState = (state) => {
 	};
 };
 
-const mapDispatch = (dispatch) => {
-	return {};
-};
-
-export default withRouter(connect(mapState, mapDispatch)(Routes));
+export default withRouter(connect(mapState)(Routes));
