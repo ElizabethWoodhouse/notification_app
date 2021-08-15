@@ -1,16 +1,29 @@
+//simulates a "sign-in" page. User enters username to get personalized page.
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { fetchUser } from '../store/subReducers/user';
 
 function SignIn(props) {
+	const handleSubmit = (evt) => {
+		evt.preventDefault();
+		const username = evt.target.username.value;
+		props.getUser(username);
+	};
 	return (
 		<div>
-			<p>Sign In page</p>
+			<form onSubmit={handleSubmit}>
+				<div>
+					<label>Enter UserName:</label>
+					<input name='username' type='text' required />
+				</div>
+				<button type='submit'>Sign In</button>
+			</form>
 		</div>
 	);
 }
 
-const mapState = (state) => ({});
+const mapDispatch = (dispatch) => ({
+	getUser: (username) => dispatch(fetchUser(username)),
+});
 
-const mapDispatch = (dispatch) => ({});
-
-export default connect(mapState, mapDispatch)(SignIn);
+export default connect(null, mapDispatch)(SignIn);
