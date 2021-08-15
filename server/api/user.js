@@ -10,7 +10,7 @@ router.get('/:username', async (req, res, next) => {
 			where: {
 				userName: req.params.username,
 			},
-			attributes: ['id', 'userName'],
+			attributes: ['id', 'userName', 'fullname'],
 		});
 		res.status(200).send(user);
 	} catch (err) {
