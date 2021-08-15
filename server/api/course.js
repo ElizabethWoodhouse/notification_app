@@ -6,11 +6,11 @@ const { CourseStatus, Course, User } = require('../db/index');
 //gets courses that are in progress for specific user
 router.get('/progress/:userId', async (req, res, next) => {
 	try {
-		const uncompletedCourses = await User.findAll({
+		const uncompletedCourses = await User.findOne({
 			where: {
 				id: req.params.userId,
 			},
-			attributes: ['id', 'userName'],
+			attributes: ['id'],
 			include: [
 				{
 					model: Course,
