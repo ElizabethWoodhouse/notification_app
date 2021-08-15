@@ -3,6 +3,7 @@ const router = require('express').Router();
 module.exports = router;
 
 router.use('/course', require('./course'));
+router.use('/user', require('./user'));
 
 router.use((req, res, next) => {
 	const error = new Error('API route requested not found');
