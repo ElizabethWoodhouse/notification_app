@@ -1,4 +1,3 @@
-//
 import React from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
 import { Homepage, SignIn } from './components/index';
@@ -13,9 +12,10 @@ function Routes(props) {
 		</Switch>
 	);
 }
+
 const mapState = (state) => {
 	return {
-		// Being 'logged in' will be defined has having a state.user that has a truthy id.
+		// Being 'logged in' will be defined as having a state.user that has a truthy id.
 		isLoggedIn: !!state.user.id,
 	};
 };
