@@ -12,7 +12,7 @@
 
 The user's homepage displays a list of notifications. Users receive notifications if they still need to complete a course.
 
-<img src="./public/homepage.png" alt="product screenshot" height="350" width="950">
+<img src="./public/home.png" alt="product screenshot" height="350" width="950">
 
 ## Technologies
 
