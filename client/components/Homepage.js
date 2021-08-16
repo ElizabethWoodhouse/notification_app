@@ -24,18 +24,16 @@ function HomePage(props) {
 	};
 	const activeCourses = props.activeCourses || [];
 	return (
-		<div>
-			<h1>{`${name} Course Progress`}</h1>
-			<div>
-				{activeCourses.length > 0 ? (
-					activeCourses.map((course) => (
-						<CourseInfoTile key={course.id} course={course} />
-					))
-				) : (
-					<p>You are not enrolled in any courses</p>
-				)}
-			</div>
-			<button onClick={signOut}>Sign Out</button>
+		<div className='notification_page'>
+			<h1>{`${name}'s Course Progress`}</h1>
+			{activeCourses.length > 0 ? (
+				activeCourses.map((course) => (
+					<CourseInfoTile key={course.id} course={course} />
+				))
+			) : (
+				<p>You are not enrolled in any courses</p>
+			)}
+			<button className='signout_button'onClick={signOut}>Sign Out</button>
 		</div>
 	);
 }

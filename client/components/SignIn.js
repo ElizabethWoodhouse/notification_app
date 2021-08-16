@@ -10,14 +10,21 @@ function SignIn(props) {
 		props.getUser(username);
 	};
 	return (
-		<div>
-			<form onSubmit={handleSubmit}>
+		<div className='signInPage'>
+			<div className='signInContainer'>
 				<div>
-					<label>Enter UserName:</label>
-					<input name='username' type='text' required />
+					<h1>Welcome Back</h1>
+					<form onSubmit={handleSubmit} className='signInForm'>
+						<div>
+							<label>Username: </label>
+							<input name='username' type='text' required />
+						</div>
+						<button className='login_button' type='submit'>
+							Sign In
+						</button>
+					</form>
 				</div>
-				<button type='submit'>Sign In</button>
-			</form>
+			</div>
 		</div>
 	);
 }

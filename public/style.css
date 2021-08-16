@@ -1,4 +1,62 @@
 body {
-  font-family: sans-serif;
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
 }
-
+/* signin page */
+.signInPage {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.signInContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #324ab2;
+	border-radius: 10px;
+	color: white;
+	width: 30%;
+	height: 50%;
+}
+.signInForm {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20%;
+}
+.login_button {
+	width: 50%;
+	margin-top: 20%;
+	align-self: center;
+	font-size: 16px;
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+/* notification */
+.notification_page {
+	background-color: #324ab2;
+	color: white;
+	border-radius: 10px;
+	width: 50%;
+	text-align: center;
+	margin: auto;
+}
+.individual_notification {
+	background-color: white;
+	width: 50%;
+	color: black;
+	margin: auto;
+}
+.signout_button {
+	width: 10%;
+	margin-bottom: 1%;
+	align-self: center;
+	font-size: 16px;
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}

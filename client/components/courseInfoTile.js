@@ -9,7 +9,7 @@ const CourseInfoTile = (props) => {
 	};
 	const { course } = props;
 	return (
-		<div>
+		<div className='individual_notification'>
 			<h4>{course.name}</h4>
 			<p>{percentage(course.status.currentPage, course.pages)}% complete</p>
 			<p>
