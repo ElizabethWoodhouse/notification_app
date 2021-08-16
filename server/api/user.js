@@ -12,7 +12,12 @@ router.get('/:username', async (req, res, next) => {
 			},
 			attributes: ['id', 'userName', 'fullname'],
 		});
-		res.status(200).send(user);
+		//if user exists send user otherwise send 404 status
+		if (user) {
+			res.send(user);
+		} else {
+			res.sendStatus(404);
+		}
 	} catch (err) {
 		next(err);
 	}

@@ -18,7 +18,8 @@ export const fetchUser = (username) => async (dispatch) => {
 		const { data: user } = await axios.get(`/api/user/${username}`);
 		dispatch(getUser(user));
 	} catch (error) {
-		console.error('Error:', error);
+		console.error('Error fetching user information in thunks:', error);
+		return 'no user';
 	}
 };
 
