@@ -4,10 +4,18 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../store/subReducers/user';
 
 function SignIn(props) {
-	const handleSubmit = (evt) => {
+	const handleSubmit = async (evt) => {
 		evt.preventDefault();
-		const username = evt.target.username.value;
-		props.getUser(username);
+		try {
+			const username = evt.target.username.value;
+			let user = await props.getUser(username);
+			if (user === 'no user') {
+				window.alert('Can not find User');
+				console.log('Error fetching user information, user may not exist');
+			}
+		} catch (error) {
+			console.log('Error in sign-in:', error);
+		}
 	};
 	return (
 		<div className='signInPage'>

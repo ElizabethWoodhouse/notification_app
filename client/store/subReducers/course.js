@@ -13,7 +13,10 @@ export const fetchActiveCourses = (userId) => async (dispatch) => {
 		const { data } = await axios.get(`/api/course/progress/${userId}`);
 		dispatch(getActiveCourses(data.courses));
 	} catch (error) {
-		console.error('Error:', error);
+		console.error(
+			`Error fetching active course for user:${userId} in fetch active courses thunks`,
+			error
+		);
 	}
 };
 
