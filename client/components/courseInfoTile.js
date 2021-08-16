@@ -13,7 +13,7 @@ const CourseInfoTile = (props) => {
 			<h4>{course.name}</h4>
 			<p>{percentage(course.status.currentPage, course.pages)}% complete</p>
 			<p>
-				{course.status.currentPage} pages out of {course.pages} pages completed
+				{course.status.currentPage} out of {course.pages} pages completed
 			</p>
 		</div>
 	);
