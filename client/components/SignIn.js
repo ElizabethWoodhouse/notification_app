@@ -12,6 +12,7 @@ function SignIn(props) {
 			if (user === 'no user') {
 				window.alert('Can not find User');
 				console.log('Error fetching user information, user may not exist');
+				evt.target.username.value = '';
 			}
 		} catch (error) {
 			console.log('Error in sign-in:', error);
